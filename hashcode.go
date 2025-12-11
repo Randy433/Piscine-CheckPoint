@@ -2,23 +2,17 @@ package main
 
 import (
 	"fmt"
-	// "honnef.co/go/tools/analysis/code"
-	// "strconv"
 )
 
 func HashCode(dec string) string {
-	if len(dec) == 0 {
-		return ""
-	}
-
+	size := len(dec)
 	hashed := ""
-
-	for _, c := range dec {
-		code := (int(c) + len(dec)) % 127
-		if code < 33 {
-			code += 33
+	for _, char := range dec {
+		hash := (int(char) + size) % 127
+		if hash < 32 || hash > 126 {
+			hash += 33
 		}
-		hashed += string(code)
+		hashed += string(hash)
 	}
 	return hashed
 }
