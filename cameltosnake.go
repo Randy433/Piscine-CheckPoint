@@ -1,6 +1,8 @@
 package main
 
-func CamelToSnakeCase2(s string) string {
+import "fmt"
+
+func CamelToSnakeCase(s string) string {
 	if s == "" {
 		return ""
 	}
@@ -42,4 +44,12 @@ func CamelToSnakeCase2(s string) string {
 	}
 
 	return result
+}
+func main() {
+	fmt.Println(CamelToSnakeCase("HelloWorld"))
+	fmt.Println(CamelToSnakeCase("helloWorld"))
+	fmt.Println(CamelToSnakeCase("camelCase"))
+	fmt.Println(CamelToSnakeCase("CAMELtoSnackCASE"))
+	fmt.Println(CamelToSnakeCase("camelToSnakeCase"))
+	fmt.Println(CamelToSnakeCase("hey2"))
 }

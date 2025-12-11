@@ -11,7 +11,6 @@ func ZipString(s string) string {
 			i++
 		}
 		result += string(count + '0') + string(s[i])
-		//result += string.Itoa(count) + string(s[i])
 	}
 	return result
 }

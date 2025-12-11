@@ -3,22 +3,15 @@ package main
 import "fmt"
 
 func FirstWord(s string) string {
-	runes := []rune{}
-	wordFound := false
-
-	if len(s) == 0 {
-		return "" + "\n"
-	}
-	for _, c := range s {
-		if c != ' ' {
-			runes = append(runes, c)
-			wordFound = true
-		} else if wordFound {
-			// A word was found but immediately after a space
-			return string(runes) + "\n"
-		}
-	}
-	return string(runes) + "\n"
+  start:= 0
+  for start < len(s) && s[start]==' '{
+    start++
+  }
+  end := start
+  for end < len(s) && s[end] != ' '{
+    end++
+  }
+  return s[start:end] +"\n"
 }
 
 func main() {

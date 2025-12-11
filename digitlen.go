@@ -3,25 +3,20 @@ package main
 import "fmt"
 
 func DigitLen(n, base int) int {
-	if base < 2 || base > 36 {
+		if base < 2 || base > 36 {
 		return -1
 	}
-
-	if n == 0 {
-		return 1
-	}
-
-	if n < 0 {
+	if n < 0 { 
 		n = -n
 	}
-
-	counter := 0
-	// var divisor int
-	for n != 0 {
+	count := 0
+	for {
+		count++
 		n = n / base
-		counter++
+		if n == 0 {
+		}
 	}
-	return counter
+	return count
 }
 
 func main() {

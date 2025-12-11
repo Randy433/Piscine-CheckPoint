@@ -21,7 +21,6 @@ func IsPrime2(nbr int) bool {
 func main() {
 	args := os.Args
 
-	// Make sure an argument is provided
 	if len(args) != 2 {
 		return
 	}
@@ -33,7 +32,6 @@ func main() {
 
 	res := ""
 
-	// Start dividing from the smallest prime
 	for i := 2; i <= val; i++ {
 		if IsPrime2(i) {
 			for val%i == 0 {

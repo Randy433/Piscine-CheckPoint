@@ -7,18 +7,16 @@ func IsCapitalized(s string) bool {
 		return false
 	}
 
-	startOfWord := true // To track when a new word starts
+	startOfWord := true
 
 	for _, c := range s {
 		if startOfWord {
-			// If word starts with a lowercase letter → false
 			if c >= 'a' && c <= 'z' {
 				return false
 			}
 			startOfWord = false
 		}
 
-		// Word separators: spaces or tabs
 		if c == ' ' || c == '\t' {
 			startOfWord = true
 		}
